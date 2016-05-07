@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
+<<<<<<< HEAD
 from .models import New, comment
 
 
@@ -21,3 +22,5 @@ class CommentsAdmin(admin.ModelAdmin):
         
 admin.site.register(New, NewsAdmin)
 admin.site.register(comment, CommentsAdmin)
+=======
+>>>>>>> 125bce7... First commit hacker-news

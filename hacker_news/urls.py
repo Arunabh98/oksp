@@ -1,5 +1,4 @@
 from django.conf.urls import url
-
 from hacker_news import views
 from hacker_news.views import NewsListView
 
@@ -10,4 +9,6 @@ urlpatterns = [
     url(r'^upload/$', views.upload, name='upload'),
     url(r'^vote-update/(?P<id>\d+)/$', views.vote_update, name='update'),
     url(r'^detail/(?P<id>\d+)/$', views.news_detail, name='news_detail'),
+    url(r'^register', views.register, name='register'),
+    url(r'^login', views.login, name='login'),
 ]
