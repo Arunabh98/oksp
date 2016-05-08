@@ -100,6 +100,27 @@ class NewsListView(ListView):
         context[self.context_object_name] = queryset
         return render_to_response(self.template_name, context, context_instance=RequestContext(request))
 
+class NewsEditView(TemplateView):
+    template_name = 'hacker-news/news_upload.html'
+
+    def get(self, request, *args, **kwargs):
+        instance = get_object_or_404(News, id=self.kwargs['id'])
+        form = NewsUploadForm(request.POST or None, instance=instance)
+        template_name = 'hacker-news/news_upload.html'
+
+        if form.is_valid():
+            instance = form.save(commit=False) 
+            instance.save()
+            return HttpResponseRedirect(reverse('hacker-news:news_list'))
+        context = locals()
+        context['form'] = form
+        return render_to_response(self.template_name, context, context_instance=RequestContext(request))
+ 
+def news_delete(request, id = None):
+    instance = get_object_or_404(News, id = id)
+    instance.delete()
+    return redirect('hacker-news:news_list')
+
 
 def news_detail(request, id=None):
     instance = get_object_or_404(News, id=id)
