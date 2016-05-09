@@ -1,5 +1,7 @@
 from django import forms
 
+from .models import Documentation
+
 
 class DocUploadForm(forms.Form):
     '''Form for documentation file upload'''

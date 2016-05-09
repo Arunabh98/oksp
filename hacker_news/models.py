@@ -29,6 +29,7 @@ class News(models.Model):
     """
 
     title = models.CharField(max_length=300)
+    post_date = models.DateTimeField(auto_now = False, auto_now_add = True)
     description = models.TextField()
     link = models.URLField(max_length=200)
     upvotes = models.IntegerField(default=0)
@@ -38,6 +39,7 @@ class News(models.Model):
 
 
 class Comment(models.Model):
+    comment_link = models.ForeignKey('self', blank=True, null=True)
     text = models.TextField()
     link = models.ForeignKey(News)
 

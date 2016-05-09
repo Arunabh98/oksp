@@ -1,6 +1,5 @@
 <html>
 <head>
-<<<<<<< HEAD
     <title>IITB Hacker News</title>
     <meta charset="utf-8" />
     {% load staticfiles %}
@@ -15,22 +14,8 @@
 
 <body class="body" style="background:{%  static 'hacker-news/img/background.jpg' %}">
     <div class="container-fluid" style="min-height:95%; ">
-=======
-	<title>IITB Hacker News</title>
-	<meta charset="utf-8" />
-	{% load staticfiles %}
-	<link rel="stylesheet" href="{% static 'hacker-news/css/bootstrap.min.css' %}" type = "text/css"/>
-    <link rel="stylesheet" href="{% static 'hacker-news/css/header.css' %}" type = "text/css"/>
-	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
-
-    <h1>IIT Bombay Hacker News</h1>
-</head>
-
-<body class="body" style="background:{%  static 'hacker-news/img/background.jpg' %}">
-	<div class="container-fluid" style="min-height:95%; ">
->>>>>>> c143006... Added some static files and urlpatterns
     {% block content %}
-    {% endblock %}
+    {% endblock content %}
     </div>
 </body>
 
